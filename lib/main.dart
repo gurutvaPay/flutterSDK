@@ -68,7 +68,7 @@ class _HomeScreenState extends State<HomeScreen> {
   final List<TransactionItem> _txns = [];
 
   // API config (replace keys for production)
-  String _liveSaltKey1 = 'live_234f901f-666f-46dc-a6ca-b656d42636e7';
+  String _liveSaltKey1 = 'live_234f9************************';
 
 
   @override
