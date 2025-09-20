@@ -1,0 +1,33 @@
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+rootProject.buildDir = "../build"
+subprojects {
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+}
+subprojects {
+    project.evaluationDependsOn(":app")
+}
+
+tasks.register("clean", Delete) {
+    delete rootProject.buildDir
+}
+
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        // Update to Android Gradle Plugin 8.1.1
+        classpath 'com.android.tools.build:gradle:8.6.0'
+        // If you have kotlin plugin, update Kotlin version in build.gradle.kts or gradle.properties
+        // classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.8.22"  // optional
+    }
+}
+
